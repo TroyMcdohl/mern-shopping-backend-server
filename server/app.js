@@ -45,7 +45,7 @@ app.use(
 );
 
 app.use(
-  "/public/img/products",
+  "https://mern-shopping-backend-server.vercel.app/public/img/products",
   express.static(path.join("public", "img", "products"))
 );
 
