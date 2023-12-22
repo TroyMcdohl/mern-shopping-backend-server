@@ -34,7 +34,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://mern-shopping-ui.vercel.app",
     credentials: true,
   })
 );
