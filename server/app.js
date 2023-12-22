@@ -40,12 +40,12 @@ app.use(
 );
 
 app.use(
-  "/public/img/users",
+  "https://mern-shopping-ui.vercel.app/public/img/users",
   express.static(path.join("public", "img", "users"))
 );
 
 app.use(
-  "/public/img/products",
+  "https://mern-shopping-ui.vercel.app/public/img/products",
   express.static(path.join("public", "img", "products"))
 );
 
