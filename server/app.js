@@ -40,7 +40,7 @@ app.use(
 );
 
 app.use(
-  "/public/img/users",
+  "https://mern-shopping-backend-server.vercel.app/public/img/users",
   express.static(path.join("public", "img", "users"))
 );
 
