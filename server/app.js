@@ -15,7 +15,9 @@ const cors = require("cors");
 require("dotenv").config();
 
 mongoose
-  .connect(process.env.DB)
+  .connect(
+    "mongodb+srv://m-shopping:fARkbgNqZg16QE2T@cluster0.mrwvd.mongodb.net/"
+  )
   .then(() => {
     console.log("DB connect successfully");
   })
