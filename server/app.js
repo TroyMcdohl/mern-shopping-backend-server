@@ -40,12 +40,12 @@ app.use(
 );
 
 app.use(
-  "https://mern-shopping-backend-server.vercel.app/public/img/users",
+  "/public/img/users",
   express.static(path.join("public", "img", "users"))
 );
 
 app.use(
-  "https://mern-shopping-backend-server.vercel.app/public/img/products",
+  "/public/img/products",
   express.static(path.join("public", "img", "products"))
 );
 
@@ -64,6 +64,9 @@ app.use("*", (req, res, next) => {
 
 app.use(globalErrorHandler);
 
-app.listen(process.env.PORT || 8000, () => {
-  console.log("Server is running!");
-});
+app.listen(
+  process.env.PORT || "https://mern-shopping-backend-server.vercel.app/",
+  () => {
+    console.log("Server is running!");
+  }
+);
