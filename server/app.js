@@ -16,7 +16,7 @@ require("dotenv").config();
 
 mongoose
   .connect(
-    "mongodb+srv://m-shopping:fARkbgNqZg16QE2T@cluster0.mrwvd.mongodb.net/"
+    "mongodb+srv://m-shopping:wTitOduqEdiAm91m@cluster0.mrwvd.mongodb.net/m-shopping?retryWrites=true&w=majority"
   )
   .then(() => {
     console.log("DB connect successfully");
@@ -64,9 +64,6 @@ app.use("*", (req, res, next) => {
 
 app.use(globalErrorHandler);
 
-app.listen(
-  process.env.PORT || "https://mern-shopping-backend-server.vercel.app/",
-  () => {
-    console.log("Server is running!");
-  }
-);
+app.listen(process.env.PORT || 8000, () => {
+  console.log("Server is running!");
+});
