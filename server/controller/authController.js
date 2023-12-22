@@ -62,7 +62,7 @@ exports.login = async (req, res, next) => {
       return next(new AppError("User not found", 400));
     }
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRECT);
+    const token = jwt.sign({ id: user._id }, "something-in-the-way");
 
     res.cookie("jwt", token, {
       httpOnly: true,
@@ -98,7 +98,7 @@ exports.protect = async (req, res, next) => {
     return next(new AppError("You need to login", 400));
   }
 
-  const decoded = jwt.verify(req.cookies.jwt, process.env.JWT_SECRECT);
+  const decoded = jwt.verify(req.cookies.jwt, "something-in-the-way");
 
   const currentUser = await User.findOne({ _id: decoded.id });
 
