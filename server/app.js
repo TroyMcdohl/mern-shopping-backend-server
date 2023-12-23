@@ -36,7 +36,7 @@ app.use(
   cors({
     origin: [
       "https://mern-shopping-ui.vercel.app",
-      "https://mern-shopping-ui.vercel.app/api/v1/users/updateme",
+      "https://mern-shopping-ui.vercel.app/userprofile",
     ],
     credentials: true,
   })
