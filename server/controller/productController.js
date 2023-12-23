@@ -8,8 +8,10 @@ exports.getAllProduct = async (req, res, next) => {
     let products = Product.find(req.query);
 
     if (req.query.sort) {
-      products = products.sort(req.query.sort);
+      products = Product.find().sort(req.query.sort);
     }
+
+    console.log(req.query.sort);
 
     if (!products) {
       return next(new AppError("Products not found", 404));
