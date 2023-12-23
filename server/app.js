@@ -16,7 +16,7 @@ require("dotenv").config();
 
 mongoose
   .connect(
-    "mongodb+srv://m-shopping:wTitOduqEdiAm91m@cluster0.mrwvd.mongodb.net/m-shopping?retryWrites=true&w=majority"
+    "mongodb+srv://m-shopping:wTitOduqEdiAm91m@cluster0.i1ffdhn.mongodb.net/m-shopping?retryWrites=true&w=majority"
   )
   .then(() => {
     console.log("DB connect successfully");
@@ -40,12 +40,12 @@ app.use(
 );
 
 app.use(
-  "https://mern-shopping-backend-server.vercel.app/public/img/users",
+  "/public/img/users",
   express.static(path.join("public", "img", "users"))
 );
 
 app.use(
-  "https://mern-shopping-backend-server.vercel.app/public/img/products",
+  "/public/img/products",
   express.static(path.join("public", "img", "products"))
 );
 
