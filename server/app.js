@@ -36,12 +36,6 @@ app.use(
   cors({
     origin: "https://mern-shopping-ui.vercel.app",
     credentials: true,
-  })
-);
-
-app.options(
-  "/api/v1",
-  cors({
     methods: ["GET", "POST", "PATCH", "DELETE"],
   })
 );
