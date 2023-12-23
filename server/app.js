@@ -34,9 +34,11 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "https://mern-shopping-ui.vercel.app",
+    origin: [
+      "https://mern-shopping-ui.vercel.app",
+      "https://mern-shopping-ui.vercel.app/api/v1/users/updateme",
+    ],
     credentials: true,
-    methods: ["GET", "POST", "PATCH", "DELETE"],
   })
 );
 
