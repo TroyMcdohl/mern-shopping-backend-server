@@ -39,6 +39,13 @@ app.use(
   })
 );
 
+app.options(
+  "/api/v1",
+  cors({
+    methods: ["GET", "POST", "PATCH", "DELETE"],
+  })
+);
+
 app.use(
   "/public/img/users",
   express.static(path.join(__dirname, "public", "img", "users"))
