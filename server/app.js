@@ -41,12 +41,12 @@ app.use(
 
 app.use(
   "/public/img/users",
-  express.static(path.join("public", "img", "users"))
+  express.static(path.join(__dirname, "public", "img", "users"))
 );
 
 app.use(
   "/public/img/products",
-  express.static(path.join("public", "img", "products"))
+  express.static(path.join(__dirname, "public", "img", "products"))
 );
 
 app.use("/api/v1/users", userRouter);
