@@ -16,7 +16,7 @@ require("dotenv").config();
 
 mongoose
   .connect(
-    "mongodb+srv://m-shopping:wTitOduqEdiAm91m@cluster0.i1ffdhn.mongodb.net/m-shopping?retryWrites=true&w=majority"
+    "mongodb+srv://m-shopping:TUEB3M5GmY5k1dov@cluster0.mrwvd.mongodb.net/m-shopping?retryWrites=true&w=majority"
   )
   .then(() => {
     console.log("DB connect successfully");
