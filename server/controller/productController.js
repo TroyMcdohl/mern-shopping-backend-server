@@ -5,12 +5,14 @@ const sharp = require("sharp");
 
 exports.getAllProduct = async (req, res, next) => {
   try {
-    let products = Product.find(req.query);
+    let products = Product.find();
 
-    if (req.query.sort == "price") {
-      products = Product.aggregate([{ $sort: { price: 1 } }]);
-    } else if (req.query.sort == "-price") {
-      products = Product.aggregate([{ $sort: { price: -1 } }]);
+    if (req.query.kind) {
+      products = Product.find({ kind: req.query.kind });
+    }
+
+    if (req.query.sort) {
+      products = products.sort(req.query.sort);
     }
 
     if (!products) {
