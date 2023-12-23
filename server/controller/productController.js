@@ -5,13 +5,11 @@ const sharp = require("sharp");
 
 exports.getAllProduct = async (req, res, next) => {
   try {
-    let products = Product.find(req.query);
+    let products = await Product.find(req.query);
 
     if (req.query.sort) {
-      products = Product.find().sort(req.query.sort);
+      products = products.sort(req.query.sort);
     }
-
-    console.log(req.query.sort);
 
     if (!products) {
       return next(new AppError("Products not found", 404));
